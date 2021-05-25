@@ -1,0 +1,19 @@
+<!-- Codigo Artigos Relacionados Inicio -->
+<div id='related-posts'>
+	<b:loop values='data:post.labels' var='label'>
+		<b:if cond='data:label.isLast != &quot;true&quot;'>
+		</b:if>
+		<b:if cond='data:blog.pageType == &quot;item&quot;'>
+			<script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels_thumbs&amp;max-results=4&quot;' type='text/javascript'/>
+		</b:if>
+	</b:loop>
+	<script type='text/javascript'>
+		var currentposturl = &quot;<data:post.url/>&quot;;
+		var maxresults = 4;
+		var relatedpoststitle = &quot;Quem viu este item também comprou:&quot;;
+		removeRelatedDuplicates_thumbs();
+		printRelatedLabels_thumbs();
+	</script>
+</div>
+<div style='clear:both'/>
+<!-- Codigo Artigos Relacionados Final -->
